@@ -215,6 +215,7 @@ try:
             writer.writeheader()
             for dic in SubNetorks(args.ip, args.BitsToBorrow):
                 writer.writerow(dic)
+        print("Exported Successfully")
     else:
         DisplayTable(SubNetorks(args.ip, args.BitsToBorrow))
     
