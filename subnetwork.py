@@ -128,9 +128,9 @@ def SubNetorks(ip, n):
                 dicData["id"] = i + 1
                 dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}'
                 f2 += int(((numHosts(ip, n) + 2) * 2**(-16)))
-                max = f2 - 2
+                max = f2 - 1
                 dicData["Usable Host IP Range"] = f"[{f1}.{min}.0.1 - {f1}.{max}.255.254]"
-                dicData["IP Broadcast"] = f"{f1}.{max + 1}.255.255"
+                dicData["IP Broadcast"] = f"{f1}.{max}.255.255"
             elif int(n) < 16:
                 if f3 == 256 :
                     f2 += 1
