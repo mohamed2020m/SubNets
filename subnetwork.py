@@ -137,7 +137,7 @@ def SubNetorks(ip, n):
                     f3 = 0
                 min = f3
                 dicData["id"] = i + 1
-                dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}/{8 + int(n)}'
+                dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}'
                 f3 += int(((numHosts(ip, n) + 2) * 2**(-8)))
                 max = f3 - 1
                 dicData["Usable Host IP Range"] = f"[{f1}.{f2}.{min}.1 - {f1}.{f2}.{max}.254]"
@@ -179,9 +179,9 @@ def SubNetorks(ip, n):
                 dicData["id"] = i + 1
                 dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}'
                 f3 += int(((numHosts(ip, n) + 2) * 2**(-8)))
-                max = f3 - 2
+                max = f3 - 1
                 dicData["Usable Host IP Range"] = f"[{f1}.{f2}.{min}.1 - {f1}.{f2}.{max}.254]"
-                dicData["IP Broadcast"] = f"{f1}.{f2}.{max + 1}.255"
+                dicData["IP Broadcast"] = f"{f1}.{f2}.{max}.255"
             arr.append(dicData)
             dicData = {}
         return arr
@@ -190,7 +190,7 @@ def SubNetorks(ip, n):
         for i in range(numSubNetworks(n)):
             min = f4 + 1
             dicData["id"] = i + 1
-            dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}'
+            dicData["Network IP"] = f'{f1}.{f2}.{f3}.{f4}/'
             f4 += (numHosts(ip, n) + 2)
             max = f4 - 2
             dicData["IP interval"] = f"[{f1}.{f2}.{f3}.{min} - {f1}.{f2}.{f3}.{max}]"
