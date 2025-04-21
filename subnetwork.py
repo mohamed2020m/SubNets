@@ -67,6 +67,9 @@ def export_to_csv(data, filename):
 def main():
     args = parse_args()
 
+    if not args.ip:
+        print("⚠️ Please specify the ip address with -ip")
+        
     if not args.subnets and not args.hosts:
         print("⚠️ Please specify either --subnets or --hosts")
         return
