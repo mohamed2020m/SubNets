@@ -69,6 +69,7 @@ def main():
 
     if not args.ip:
         print("⚠️ Please specify the ip address with -ip")
+        return 
         
     if not args.subnets and not args.hosts:
         print("⚠️ Please specify either --subnets or --hosts")
